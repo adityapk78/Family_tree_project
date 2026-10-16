@@ -25,6 +25,8 @@ To compile and get output from the program, I used the following command:
 gcc family\_tree.c  
 ./a.out
 
+to Look at all the screenshorts : https://docs.google.com/document/d/19AUWwrnsq-_mChWFTtLMcFFLRSHqNngoYVJ4RyixB2A/edit?tab=t.lmc59deexc5j
+
 ![][image1]
 
 ![][image2]  
@@ -53,6 +55,18 @@ gcc family\_tree.c
 ![][image17]
 
 ![][image18]  
+
+<img width="730" height="415" alt="Screenshot 2026-10-16 202955" src="https://github.com/user-attachments/assets/43cc20fe-40da-421d-a1f6-8ca9a5aa5be6" />
+
+<img width="960" height="540" alt="Screenshot 2026-10-15 154401" src="https://github.com/user-attachments/assets/d99f3c80-1e35-4d81-b7e4-6c3e02bd1617" />
+
+<img width="960" height="540" alt="Screenshot 2026-10-15 162436" src="https://github.com/user-attachments/assets/8a54eed0-c62c-4ab1-bfa3-91fe4d2f26af" />
+<img width="958" height="540" alt="Screenshot 2026-10-15 190852" src="https://github.com/user-attachments/assets/3c5a32e7-04a3-4663-b280-abee9bdadf30" />
+
+<img width="713" height="402" alt="Screenshot 2026-10-16 235654" src="https://github.com/user-attachments/assets/d2bdbf4a-077a-4f48-9ca4-aed59dfecea5" />
+
+<img width="721" height="380" alt="image" src="https://github.com/user-attachments/assets/61d5fa73-b5b6-4a92-8c10-5780c72df57e" />
+
 
 
 
