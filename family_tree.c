@@ -38,22 +38,45 @@ void link_parents(Person *boy, Person *father, Person *mother){
 void print_family_relationships(const Person *person){
     if (person == NULL){
         printf("Person is NULL\n");
-    } else{
-        printf("\nName: %s, and Age: %d\n", person->name, person->age);
+        return;
     }
+
+    printf("\n===== FAMILY TREE RELATIONSHIPS =====\n");
+    printf("\n 1.YOURSELF:\n");
+    printf("   - Name: %s | Age: %d\n",person->name, person->age);
+    
+    printf("\n 2.PARENTS:\n");
     if (person->father != NULL){
-        printf("Father's Name: %s, and Age: %d\n", person->father->name, person->father->age);
-    } else{
-        printf("Father's data is not available!\n");
+        printf("   - Father: %s | Age: %d\n",person->father->name, person->father->age);
     }
     if (person->mother != NULL){
-        printf("Mother's Name: %s, and Age: %d\n", person->mother->name, person->mother->age);
-    } else{
-        printf("Mother's data is not available!\n");
+        printf("   -Mother: %s | Age: %d\n",person->mother->name, person->mother->age);
+    }
+
+    printf("\n 3.PATERNAL GRANDPARENTS:\n");
+    if (person->father != NULL && person->father->father != NULL){
+        printf("   - Grandfather: %s | Age: %d\n",person->father->father->name,person->father->father->age);
+    }
+
+    if (person->father != NULL && person->father->mother != NULL){
+        printf("   -Grandmother: %s | Age: %d\n",person->father->mother->name,person->father->mother->age);
+    }
+
+    printf("\n 4.MATERNAL GRANDPARENTS:\n");
+    if (person->mother != NULL && person->mother->father != NULL){
+        printf("   -Grandfather: %s | Age: %d\n",person->mother->father->name,person->mother->father->age);
+    }
+
+    if (person->mother != NULL && person->mother->mother != NULL){
+        printf("   -Grandmother: %s | Age: %d\n",person->mother->mother->name,person->mother->mother->age);
     }
 }
 
-
+void free_family_tree(Person *people[], int count){
+    for (int i=0; i<count; i++){
+        free(people[i]);
+    }
+}
 
 int main(void){
     char name [50];
@@ -83,15 +106,10 @@ int main(void){
     link_parents(father, grandfather1, grandmother1);
     link_parents(mother, grandfather2, grandmother2);
 
-    print_family_relationships(me);
-    print_family_relationships(father);
-    print_family_relationships(mother);
 
-    free(me);
-    free(father);
-    free(mother);
-    free(grandfather1);
-    free(grandfather2);
-    free(grandmother1);
-    free(grandmother2);
+    print_family_relationships(me);
+
+
+    Person *people[]={me, father,mother,grandfather1, grandmother1,grandfather2, grandmother2};
+    free_family_tree(people,7);
 }
