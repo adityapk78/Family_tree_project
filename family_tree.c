@@ -35,16 +35,36 @@ void link_parents(Person *boy, Person *father, Person *mother){
     boy->mother = mother;
 }
 
+void print_family_relationships(const Person *person){
+    if (person == NULL){
+        printf("Person is NULL\n");
+    } else{
+        printf("\nName: %s, and Age: %d\n", person->name, person->age);
+    }
+    if (person->father != NULL){
+        printf("Father's Name: %s, and Age: %d\n", person->father->name, person->father->age);
+    } else{
+        printf("Father's data is not available!\n");
+    }
+    if (person->mother != NULL){
+        printf("Mother's Name: %s, and Age: %d\n", person->mother->name, person->mother->age);
+    } else{
+        printf("Mother's data is not available!\n");
+    }
+}
+
 
 
 int main(void){
-    Person *me = create_person("Pankaj", 19);
-    Person *father = create_person("Binod", 45);
-    Person *mother = create_person("Gita", 42);
-    Person *grandfather1 = create_person("Bhuneswar", 71);
-    Person *grandmother1 = create_person("Dhaneswari", 68);
-    Person *grandfather2 = create_person("Ramsahay", 75);
-    Person *grandmother2 = create_person("Sila", 72);
+    char name [50];
+    int age;
+    Person *me = create_person(name, age);
+    Person *father = create_person(name, age);
+    Person *mother = create_person(name, age);
+    Person *grandfather1 = create_person(name,age);
+    Person *grandmother1 = create_person(name,age);
+    Person *grandfather2 = create_person(name,age);
+    Person *grandmother2 = create_person(name,age);
 
     if (me == NULL || father == NULL || mother == NULL || grandfather1 == NULL || grandmother1 == NULL || grandfather2 == NULL || grandmother2 == NULL) {
         printf("Memory allocation failed! \n");
@@ -63,14 +83,9 @@ int main(void){
     link_parents(father, grandfather1, grandmother1);
     link_parents(mother, grandfather2, grandmother2);
 
-
-    printf("Your name is %s and age is %d\n", me->name, me->age);
-    printf("Your father's name is %s and age is %d\n", father->name, father->age);
-    printf("Your mother name is %s and age is %d\n", mother->name, mother->age);
-    printf("Your paternal grandfather's name is %s and age is %d\n", grandfather1->name, grandfather1->age);
-    printf("Your paternal grandmother's name is %s and age is %d\n", grandmother1->name, grandmother1->age);
-    printf ("Your maternal grandfather's name is %s and age is %d\n",grandfather2->name, grandfather2->age);
-    printf ("Your maternal grandmother's name is %s and age is %d\n",grandmother2->name, grandmother2->age);
+    print_family_relationships(me);
+    print_family_relationships(father);
+    print_family_relationships(mother);
 
     free(me);
     free(father);
